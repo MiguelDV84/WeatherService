@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.OpenApi.Any;
+using Newtonsoft.Json;
 using WeatherAPP.Models;
 
 namespace WeatherAPP.Repositories
@@ -17,7 +19,7 @@ namespace WeatherAPP.Repositories
         public async Task<WeatherData> GetWeatherDataFromApiAsync(string location)
         {
             string apiKey = _configuration["VisualCrossing:ApiKey"];
-            string url = $"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{location}?unitGroup=metric&key={apiKey}&contentType=json";
+            string url = $"https://api.tomorrow.io/v4/weather/forecast?location={location}&apikey=ZDIO0qpDSCjf4nWMa78iVSAptlJM2vjt";
 
             HttpResponseMessage response = await _httpClient.GetAsync(url);
 

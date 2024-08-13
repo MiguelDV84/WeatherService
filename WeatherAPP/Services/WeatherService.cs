@@ -16,19 +16,21 @@ namespace WeatherAPP.Services
 
         public async Task<WeatherData> GetWeatherDataAsync(string locaiton)
         {
+            var weatherData = await _repository.GetWeatherDataFromApiAsync(locaiton);
+            if (weatherData != null)
+            {
+                await _redisCacheRepository.SetCachedWeatherDataAsync(locaiton, weatherData);
+            }
+
+
             var cachedData = await _redisCacheRepository.GetCacheWeatherDataAsync(locaiton);
             if (cachedData != null) 
             {
                 return cachedData;
             }
 
-            var weatherData = await _repository.GetWeatherDataFromApiAsync(locaiton);
-            if (weatherData != null) 
-            {
-                await _redisCacheRepository.SetCachedWeatherDataAsync(locaiton, weatherData);
-            }
-
-            return weatherData;
+           
+            return null;
         }
     }
 }

@@ -39,3 +39,4 @@ C:\Users\mdiavel\source\repos\WeatherAPP\WeatherAPP\obj\Debug\net7.0\refint\Weat
 C:\Users\mdiavel\source\repos\WeatherAPP\WeatherAPP\obj\Debug\net7.0\WeatherAPP.pdb
 C:\Users\mdiavel\source\repos\WeatherAPP\WeatherAPP\obj\Debug\net7.0\WeatherAPP.genruntimeconfig.cache
 C:\Users\mdiavel\source\repos\WeatherAPP\WeatherAPP\obj\Debug\net7.0\ref\WeatherAPP.dll
+C:\Users\mdiavel\source\repos\WeatherAPP\WeatherAPP\obj\Debug\net7.0\WeatherAPP.sourcelink.json
